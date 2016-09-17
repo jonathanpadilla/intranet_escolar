@@ -1,8 +1,8 @@
-# DEPENDENCIAS
+# dependencias
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
-# MODULOS
+# modulos
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
