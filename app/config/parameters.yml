@@ -5,7 +5,7 @@ parameters:
     db_port: null
 
     # db colegio defecto
-    db_colegio_defecto_name: symfony
+    db_colegio_defecto_name: intranet_colegio_desarrollo_defecto
     db_colegio_defecto_user: root
     db_colegio_defecto_password: null
 
