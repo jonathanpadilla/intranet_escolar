@@ -4,6 +4,17 @@ parameters:
     db_host: 127.0.0.1
     db_port: null
 
+    # GLOBALES
+    # defecto
+    db_global_defecto_name: intranet_global_defecto
+    db_global_defecto_user: root
+    db_global_defecto_password: null
+    # persona
+    db_global_persona_name: intranet_global_persona
+    db_global_persona_user: root
+    db_global_persona_password: null
+
+    # MODULOS
     # db colegio defecto
     db_colegio_defecto_name: intranet_colegio_desarrollo_defecto
     db_colegio_defecto_user: root

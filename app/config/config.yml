@@ -42,6 +42,24 @@ doctrine:
     dbal:
         default_connection: colegio_defecto
         connections:
+            # global
+            global_defecto:
+                driver:   pdo_mysql
+                host:     "%db_host%"
+                port:     "%db_port%"
+                dbname:   "%db_global_defecto_name%"
+                user:     "%db_global_defecto_user%"
+                password: "%db_global_defecto_password%"
+                charset:  UTF8
+            global_persona:
+                driver:   pdo_mysql
+                host:     "%db_host%"
+                port:     "%db_port%"
+                dbname:   "%db_global_persona_name%"
+                user:     "%db_global_persona_user%"
+                password: "%db_global_persona_password%"
+                charset:  UTF8
+            # modulos
             colegio_defecto:
                 driver:   pdo_mysql
                 host:     "%db_host%"
@@ -52,8 +70,18 @@ doctrine:
                 charset:  UTF8
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        default_entity_manager: colegio_defecto
+        default_entity_manager: global_persona
         entity_managers:
+            # global
+            global_defecto:
+                connection: global_defecto
+                mappings:
+                    BaseBundle: ~
+            global_persona:
+                connection: global_persona
+                mappings:
+                    BaseBundle: ~
+            # modulos
             colegio_defecto:
                 connection: colegio_defecto
                 mappings:
