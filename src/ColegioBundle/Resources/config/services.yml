@@ -1,0 +1,4 @@
+services:
+#    colegio.example:
+#        class: ColegioBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,8 +1,11 @@
+colegio:
+    resource: "@ColegioBundle/Resources/config/routing.yml"
+    prefix:   /colegio/
+
+base:
+    resource: "@BaseBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # dependencias
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
-
-# modulos
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation

@@ -19,7 +19,8 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Liuggio\ExcelBundle\LiuggioExcelBundle(),
             // modulos
-            new AppBundle\AppBundle(),
+            new BaseBundle\BaseBundle(),
+            new ColegioBundle\ColegioBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
