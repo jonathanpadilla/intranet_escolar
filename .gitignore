@@ -3,7 +3,7 @@
 #/build/
 #/composer.phar
 #/vendor/
-#/web/bundles/
+/web/bundles/
 #/app/bootstrap.php.cache
 /app/cache/*
 !app/cache/.gitkeep

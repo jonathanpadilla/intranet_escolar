@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>{{ default_data.head.title is defined ? default_data.head.title : 'Intranet Escolar' }}</title>
+        
+        {% block stylesheets -%}
+            {% stylesheets
+                'bundles/colegio/css/bootstrap.css'
+                'bundles/colegio/css/font-awesome.css'
+                'bundles/colegio/css/material-design-iconic-font.css'
+                'bundles/colegio/css/layout.css'
+                'bundles/colegio/css/animate.css'
+                'bundles/colegio/css/components.css'
+                'bundles/colegio/css/widgets.css'
+                'bundles/colegio/css/plugins.css'
+                'bundles/colegio/css/pages.css'
+                'bundles/colegio/css/bootstrap-extend.css'
+                'bundles/colegio/css/common.css'
+                'bundles/colegio/css/responsive.css'
+                filter='cssrewrite'
+                output='css/compiled/app.css' %}
+
+                <link type="text/css" rel="stylesheet" href="{{ absolute_url(asset_url) }}" />
+
+            {% endstylesheets %}
+        {%- endblock %}
+
+    </head>
+    <body class="leftbar-view">
+        {% block body -%}
+
+        {%- endblock %}
+        {% block javascripts -%}
+            {% javascripts
+                '@ColegioBundle/Resources/public/js/lib/jquery/jquery-1.11.3.min.js'
+                '@ColegioBundle/Resources/public/js/lib/jquery-migrate.js'
+                '@ColegioBundle/Resources/public/js/lib/bootstrap.js'
+                '@ColegioBundle/Resources/public/js/lib/jquery.ui.js'
+                '@ColegioBundle/Resources/public/js/lib/jRespond.js'
+                '@ColegioBundle/Resources/public/js/lib/nav.accordion.js'
+                '@ColegioBundle/Resources/public/js/lib/hover.intent.js'
+                '@ColegioBundle/Resources/public/js/lib/hammerjs.js'
+                '@ColegioBundle/Resources/public/js/lib/jquery.hammer.js'
+                '@ColegioBundle/Resources/public/js/lib/jquery.fitvids.js'
+                '@ColegioBundle/Resources/public/js/lib/scrollup.js'
+                '@ColegioBundle/Resources/public/js/lib/smoothscroll.js'
+                '@ColegioBundle/Resources/public/js/lib/jquery.slimscroll.js'
+                '@ColegioBundle/Resources/public/js/lib/velocity.js'
+                '@ColegioBundle/Resources/public/js/lib/smart-resize.js'
+                '@ColegioBundle/Resources/public/js/apps.js'
+                output='js/compiled/main.js' %}
+
+                <script src="{{ absolute_url(asset_url) }}"></script>
+
+            {% endjavascripts %}
+        {%- endblock %}
+    </body>
+</html>

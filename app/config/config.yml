@@ -4,11 +4,18 @@ imports:
     - { resource: services.yml }
     - { resource: "@BaseBundle/Resources/config/services.yml" }
     - { resource: "@ColegioBundle/Resources/config/services.yml" }
+    - { resource: "@AlumnoBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
 
 framework:
     #esi:             ~
@@ -68,9 +75,17 @@ doctrine:
                 user:     "%db_colegio_defecto_user%"
                 password: "%db_colegio_defecto_password%"
                 charset:  UTF8
+            modulo_alumno:
+                driver:   pdo_mysql
+                host:     "%db_host%"
+                port:     "%db_port%"
+                dbname:   "%db_modulo_alumno_name%"
+                user:     "%db_modulo_alumno_user%"
+                password: "%db_modulo_alumno_password%"
+                charset:  UTF8
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        default_entity_manager: global_persona
+        default_entity_manager: modulo_alumno
         entity_managers:
             # global
             global_defecto:
@@ -86,6 +101,10 @@ doctrine:
                 connection: colegio_defecto
                 mappings:
                     ColegioBundle: ~
+            modulo_alumno:
+                connection: modulo_alumno
+                mappings:
+                    AlumnoBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:

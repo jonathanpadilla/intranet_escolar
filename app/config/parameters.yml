@@ -19,6 +19,10 @@ parameters:
     db_colegio_defecto_name: intranet_colegio_desarrollo_defecto
     db_colegio_defecto_user: root
     db_colegio_defecto_password: null
+    # modulo alumno
+    db_modulo_alumno_name: intranet_colegio_desarrollo_modulo_alumno
+    db_modulo_alumno_user: root
+    db_modulo_alumno_password: null
 
     # mail
     mailer_transport: smtp

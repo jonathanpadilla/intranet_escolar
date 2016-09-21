@@ -18,9 +18,11 @@ class AppKernel extends Kernel
             // dependencias
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Liuggio\ExcelBundle\LiuggioExcelBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             // modulos
             new BaseBundle\BaseBundle(),
             new ColegioBundle\ColegioBundle(),
+            new AlumnoBundle\AlumnoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
