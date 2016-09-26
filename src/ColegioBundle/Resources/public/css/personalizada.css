@@ -1,0 +1,16 @@
+/** asterisco de campo requerido **/
+.req-area{
+	color: #ffb300;
+	font-size: 10px;
+    vertical-align: top;
+}
+
+/** icono de carga **/
+.load-div{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.load-div i{
+	color: #808080;
+}

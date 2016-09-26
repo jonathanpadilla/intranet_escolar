@@ -1,0 +1,280 @@
+{% extends "ColegioBundle:Default:body.html.twig" %}
+
+{% block container %}
+	<div class="row">
+        <div class="col-md-12">
+            <div class="widget-wrap">
+                <div class="widget-container margin-top-0">
+                    <div class="widget-content">
+                        <form action="#" method="post" class="j-forms j-multistep" id="j-forms" novalidate>
+                            <!-- end /.header-->
+
+                            <div class="form-content">
+
+                                <!-- start steps -->
+                                <div class="wizard-breadcrumb default-style">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3 step">
+                                            <div class="steps">
+                                                <span class="step-number">Información personal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 step">
+                                            <div class="steps">
+                                                <span class="step-number">Información domiciliaria</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 step">
+                                            <div class="steps">
+                                                <span class="step-number">Contácto</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 step">
+                                            <div class="steps">
+                                                <span class="step-number">Grupo familiar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="load-div">
+									<div class="row">
+										<div class="col-md-12 text-center">
+											<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+										</div>
+									</div>
+								</div>
+                                <!-- end steps -->
+
+                                <fieldset>
+
+                                    <div class="row">
+                                        <div class="col-md-6 unit">
+                                            <label class="label">R.U.T <i class="fa fa-asterisk req-area"></i></label>
+                                            <div class="input">
+                                                <label class="icon-right" for="txt_rut">
+                                                    <i class="fa fa-user"></i>
+                                                </label>
+                                                <input type="text" id="txt_rut" name="txt_rut" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 unit">
+                                            <label class="label">Numero de matricula <i class="fa fa-asterisk req-area"></i></label>
+                                            <div class="input">
+                                                <label class="icon-right" for="txt_numero_matricula">
+                                                    <i class="fa fa-hashtag"></i>
+                                                </label>
+                                                <input type="text" id="txt_numero_matricula" name="txt_numero_matricula" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+	                                    <div class="col-md-6 unit">
+	                                        <label class="label">Nombre <i class="fa fa-asterisk req-area"></i></label>
+	                                        <div class="input">
+	                                            <label class="icon-right" for="txt_nombre">
+	                                                <i class="fa fa-user"></i>
+	                                            </label>
+	                                            <input type="text" id="txt_nombre" name="txt_nombre" class="form-control">
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6 unit">
+	                                        <label class="label">Segundo Nombre</label>
+	                                        <div class="input">
+	                                            <label class="icon-right" for="txt_segundo_nombre">
+	                                                <i class="fa fa-user"></i>
+	                                            </label>
+	                                            <input type="text" id="txt_segundo_nombre" name="txt_segundo_nombre" class="form-control">
+	                                        </div>
+	                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                    	<div class="col-md-6 unit">
+	                                        <label class="label">Apellido paterno <i class="fa fa-asterisk req-area"></i></label>
+	                                        <div class="input">
+	                                            <label class="icon-right" for="txt_apellido_paterno">
+	                                                <i class="fa fa-user"></i>
+	                                            </label>
+	                                            <input type="text" id="txt_apellido_paterno" name="txt_apellido_paterno" class="form-control">
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6 unit">
+	                                        <label class="label">Apellido materno <i class="fa fa-asterisk req-area"></i></label>
+	                                        <div class="input">
+	                                            <label class="icon-right" for="txt_apellido_materno">
+	                                                <i class="fa fa-user"></i>
+	                                            </label>
+	                                            <input type="text" id="txt_apellido_materno" name="txt_apellido_materno" class="form-control">
+	                                        </div>
+	                                    </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 unit">
+                                            <label class="label">Fecha de nacimiento <i class="fa fa-asterisk req-area"></i></label>
+                                            <div class="input">
+                                                <label class="icon-right" for="txt_fecha_nacimiento">
+                                                    <i class="fa fa-calendar"></i>
+                                                </label>
+                                                <input type="text" name="txt_fecha_nacimiento" class="form-control txt_fecha">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 unit">
+                                            <div class="inline-group">
+                                                <label class="label">Sexo <i class="fa fa-asterisk req-area"></i></label>
+                                                <label class="radio">
+                                                    <input type="radio" name="radio_sexo" checked="">
+                                                    <i></i>
+                                                    Masculino
+                                                </label>
+                                                <label class="radio">
+                                                    <input type="radio" name="radio_sexo">
+                                                    <i></i>
+                                                    Femenino
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        {# <div class="col-md-6 unit">
+                                            <label class="label">Phone/Mobile</label>
+                                            <div class="input">
+                                                <label class="icon-right" for="phone">
+                                                    <i class="fa fa-phone"></i>
+                                                </label>
+                                                <input type="text" id="phone" name="phone" class="form-control">
+                                            </div>
+                                        </div> #}
+                                    </div>
+                                    <div class="row">
+                                    	<div class="col-md-12 unit">
+	                                        <label class="label">Comentario</label>
+	                                        <div class="input">
+	                                            <textarea spellcheck="false" name="txt_comentario" class="form-control"></textarea>
+	                                        </div>
+	                                    </div>
+                                    </div>
+
+                                </fieldset>
+
+                                <fieldset>
+
+                                    <!-- start guests -->
+                                    <div class="row">
+                                        <div class="col-md-6 unit">
+                                            <label class="label">Adult guests</label>
+                                            <div class="input">
+                                                <label class="icon-right" for="adults">
+                                                    <i class="fa fa-male"></i>
+                                                </label>
+                                                <input type="text" id="adults" name="adults" class="form-control">
+                                                <span class="tooltip tooltip-right-top">Number of adult guests</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 unit">
+                                            <label class="label">Children guests</label>
+                                            <div class="input">
+                                                <label class="icon-right" for="children">
+                                                    <i class="fa fa-female"></i>
+                                                </label>
+                                                <input type="text" id="children" name="children" class="form-control">
+                                                <span class="tooltip tooltip-right-top">Number of children</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end guests -->
+
+                                    <!-- start date -->
+                                    <div class="row">
+                                        <div class="col-md-6 unit">
+                                            <label class="label">Check-in date</label>
+                                            <div class="input">
+                                                <label class="icon-right" for="date_from">
+                                                    <i class="fa fa-calendar"></i>
+                                                </label>
+                                                <input type="text" id="date_from" name="date_from" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 unit">
+                                            <label class="label">Check-out date</label>
+                                            <div class="input">
+                                                <label class="icon-right" for="date_to">
+                                                    <i class="fa fa-calendar"></i>
+                                                </label>
+                                                <input type="text" id="date_to" name="date_to" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end date -->
+
+                                </fieldset>
+
+                                <fieldset>
+
+                                    <!-- start message -->
+                                    <div class="unit">
+                                        <label class="label">Comments/Message</label>
+                                        <div class="input">
+                                            <textarea spellcheck="false" name="message" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- end message -->
+
+                                    <!-- start response from server -->
+                                    <div id="response"></div>
+                                    <!-- end response from server -->
+
+                                </fieldset>
+
+                                <fieldset>
+
+                                    <!-- start message -->
+                                    <div class="unit">
+                                        <label class="label">Comments/Messagesasdasd</label>
+                                        <div class="input">
+                                            <textarea spellcheck="false" name="message" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- end message -->
+
+                                    <!-- start response from server -->
+                                    <div id="response"></div>
+                                    <!-- end response from server -->
+
+                                </fieldset>
+
+                            </div>
+                            <!-- end /.content -->
+
+                            <div class="form-footer block-form-footer">
+                                <button type="submit" class="btn btn-success primary-btn multi-submit-btn">Guardar</button>
+                                <button type="button" class="btn btn-primary primary-btn multi-next-btn">Siguiente</button>
+                                <button type="button" class="btn btn-info secondary-btn multi-prev-btn">Anterior</button>
+                            </div>
+                            <!-- end /.footer -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts -%}
+	{{ parent() }}
+	{% javascripts
+        '@ColegioBundle/Resources/public/js/lib/jquery.maskedinput.js'
+        '@ColegioBundle/Resources/public/js/lib/jquery.validate.js'
+        '@ColegioBundle/Resources/public/js/lib/jquery.form.js'
+        '@ColegioBundle/Resources/public/js/lib/forms.js'
+        '@BaseBundle/Resources/public/js/validarut.js'
+        '@AlumnoBundle/Resources/public/js/registrar-matricula.js'
+        output='js/compiled/main.js' %}
+
+        <script src="{{ absolute_url(asset_url) }}"></script>
+
+    {% endjavascripts %}
+
+{%- endblock %}

@@ -1,3 +1,7 @@
 alumno_homepage:
     path:     /
     defaults: { _controller: AlumnoBundle:Default:index }
+
+alumno_vista_registrar_matricula:
+    path:     /registrar-matricula/
+    defaults: { _controller: AlumnoBundle:RegistrarMatricula:registrarMatricula }

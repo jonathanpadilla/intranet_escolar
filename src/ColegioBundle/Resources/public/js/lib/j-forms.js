@@ -26,7 +26,7 @@
             // Start date
         function dateFrom(date_from, date_to) {
             $( date_from ).datepicker({
-                dateFormat: 'mm/dd/yy',
+                dateFormat: 'dd/mm/yy',
                 prevText: '<i class="zmdi zmdi-chevron-left"></i>',
                 nextText: '<i class="zmdi zmdi-chevron-right"></i>',
                 onClose: function( selectedDate ) {
@@ -41,7 +41,7 @@
         // Finish date
         function dateTo(date_from, date_to) {
             $( date_to ).datepicker({
-                dateFormat: 'mm/dd/yy',
+                dateFormat: 'dd/mm/yy',
                 prevText: '<i class="zmdi zmdi-chevron-left"></i>',
                 nextText: '<i class="zmdi zmdi-chevron-right"></i>',
                 onClose: function( selectedDate ) {
