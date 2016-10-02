@@ -1,3 +1,11 @@
+$(function(){
+	'use strict';
+
+	$(".select-search").select2();
+
+	$('.clone-widget').cloneya();
+})
+
 $.datepicker.regional['es'] = {
 	closeText: 'Cerrar',
 	prevText: '<',

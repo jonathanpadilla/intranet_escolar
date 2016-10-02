@@ -30,7 +30,11 @@ $(function(){
 
     jQuery.validator.addMethod("rut", function(value, element){
 	    return Rut(txt_rut);
-	}, "Rut inválido"); 
+	}, "Rut inválido");
+
+    $.validator.addMethod("valueNotEquals", function(value, element, arg){
+        return arg != value;
+     }, "Seleccione una opción");
 
     var msg_required = 'Campo requerido';
     $( '#j-forms' ).validate({
@@ -48,9 +52,9 @@ $(function(){
                 required: true,
                 rut: true
             },
-            txt_numero_matricula: {
-                required: true
-            },
+            // txt_numero_matricula: {
+            //     required: true
+            // },
             txt_nombre: {
                 required: true,
             },
@@ -65,16 +69,30 @@ $(function(){
             },
             radio_sexo: {
                 required: true
-            }
+            },
+            txt_calle: {
+                required: true
+            },
+            select_comuna: {
+                valueNotEquals: 'default'
+            },
+            "correo[]": {
+                required: true,
+                email: true
+            },
+            "telefono[]": {
+                required: true,
+                number: true
+            },
         },
         messages: {
             txt_rut: {
                 required: msg_required,
                 rut: 'Ingrese un rut válido'
             },
-            txt_numero_matricula: {
-                required: msg_required
-            },
+            // txt_numero_matricula: {
+            //     required: msg_required
+            // },
             txt_nombre: {
                 required: msg_required
             },
@@ -89,8 +107,23 @@ $(function(){
             },
             radio_sexo: {
                 required: msg_required
-            }
+            },
+            txt_calle: {
+                required: msg_required
+            },
+            select_comuna: {
+                valueNotEquals: msg_required
+            },
+            "correo[]": {
+                required: msg_required,
+                email: 'Ingrese una dirección de correo válida'
+            },
+            "telefono[]": {
+                required: msg_required,
+                number: 'Ingrese un numero válido'
+            },
         },
+
         // Add class 'error-view'
         highlight: function(element, errorClass, validClass) {
             $(element).closest('.input').removeClass(validClass).addClass(errorClass);
@@ -115,75 +148,76 @@ $(function(){
         },
         // Submit the form
         submitHandler:function() {
-            $( '#j-forms' ).ajaxSubmit({
+            console.log('enviar');
+            // $( '#j-forms' ).ajaxSubmit({
 
-                // Server response placement
-                target:'#j-forms #response',
+            //     // Server response placement
+            //     target:'#j-forms #response',
 
-                // If ajax error occurs
-                error:function(xhr) {
-                    $('#j-forms #response').html('An error occured: ' + xhr.status + ' - ' + xhr.statusText);
-                },
+            //     // If ajax error occurs
+            //     error:function(xhr) {
+            //         $('#j-forms #response').html('An error occured: ' + xhr.status + ' - ' + xhr.statusText);
+            //     },
 
-                // Before submiting the form
-                beforeSubmit:function(){
-                    // Add class 'processing' to the submit button
-                    $('#j-forms button[type="submit"]').attr('disabled', true).addClass('processing');
-                },
+            //     // Before submiting the form
+            //     beforeSubmit:function(){
+            //         // Add class 'processing' to the submit button
+            //         $('#j-forms button[type="submit"]').attr('disabled', true).addClass('processing');
+            //     },
 
-                // If ajax success occurs
-                success:function(){
-                    // Remove class 'processing'
-                    $('#j-forms button[type="submit"]').attr('disabled', false).removeClass('processing');
+            //     // If ajax success occurs
+            //     success:function(){
+            //         // // Remove class 'processing'
+            //         // $('#j-forms button[type="submit"]').attr('disabled', false).removeClass('processing');
 
-                    // Remove classes 'error-view' and 'success-view'
-                    $('#j-forms .input').removeClass('success-view error-view');
-                    $('#j-forms .check').removeClass('success-view error-view');
+            //         // // Remove classes 'error-view' and 'success-view'
+            //         // $('#j-forms .input').removeClass('success-view error-view');
+            //         // $('#j-forms .check').removeClass('success-view error-view');
 
-                    // If response for the server is a 'success-message'
-                    if ( $('#j-forms .success-message').length ) {
+            //         // // If response for the server is a 'success-message'
+            //         // if ( $('#j-forms .success-message').length ) {
 
-                        // Reset form
-                        $('#j-forms').resetForm();
+            //         //     // Reset form
+            //         //     $('#j-forms').resetForm();
 
-                        // Destroy old date range
-                        destroyDate('#date_from');
-                        destroyDate('#date_to');
+            //         //     // Destroy old date range
+            //         //     destroyDate('#date_from');
+            //         //     destroyDate('#date_to');
 
-                        // Initialize new date range
-                        dateFrom('#date_from', '#date_to');
-                        dateTo('#date_from', '#date_to');
+            //         //     // Initialize new date range
+            //         //     dateFrom('#date_from', '#date_to');
+            //         //     dateTo('#date_from', '#date_to');
 
-                        // Prevent submitting the form while success message is shown
-                        $('#j-forms button[type="submit"]').attr('disabled', true);
+            //         //     // Prevent submitting the form while success message is shown
+            //         //     $('#j-forms button[type="submit"]').attr('disabled', true);
 
-                        // Prevent clicking on the 'prev' button
-                        $('#j-forms .multi-prev-btn').attr('disabled', true);
+            //         //     // Prevent clicking on the 'prev' button
+            //         //     $('#j-forms .multi-prev-btn').attr('disabled', true);
 
-                        setTimeout(function(){
-                            // Delete success message after 5 seconds
-                            $('#j-forms #response').removeClass('success-message').html('');
+            //         //     setTimeout(function(){
+            //         //         // Delete success message after 5 seconds
+            //         //         $('#j-forms #response').removeClass('success-message').html('');
 
-                            // Make submit button available
-                            $('#j-forms button[type="submit"]').attr('disabled', false);
+            //         //         // Make submit button available
+            //         //         $('#j-forms button[type="submit"]').attr('disabled', false);
 
-                            // Make 'prev' button available
-                            $('#j-forms .multi-prev-btn').attr('disabled', false);
+            //         //         // Make 'prev' button available
+            //         //         $('#j-forms .multi-prev-btn').attr('disabled', false);
 
-                            // Hide submit button and 'prev' button
-                            $('#j-forms .multi-prev-btn').css('display', 'none');
-                            $('#j-forms .multi-submit-btn').css('display', 'none');
+            //         //         // Hide submit button and 'prev' button
+            //         //         $('#j-forms .multi-prev-btn').css('display', 'none');
+            //         //         $('#j-forms .multi-submit-btn').css('display', 'none');
 
-                            // Make first fieldset from multi form active
-                            $('#j-forms fieldset').removeClass('active-fieldset');
-                            $('#j-forms fieldset').eq(0).addClass('active-fieldset');
+            //         //         // Make first fieldset from multi form active
+            //         //         $('#j-forms fieldset').removeClass('active-fieldset');
+            //         //         $('#j-forms fieldset').eq(0).addClass('active-fieldset');
 
-                            // Show 'next' button
-                            $('#j-forms .multi-next-btn').css('display', 'block');
-                        }, 5000);
-                    }
-                }
-            });
+            //         //         // Show 'next' button
+            //         //         $('#j-forms .multi-next-btn').css('display', 'block');
+            //         //     }, 5000);
+            //         // }
+            //     }
+            // });
         }
     });
     /***************************************/

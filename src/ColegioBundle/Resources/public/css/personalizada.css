@@ -14,3 +14,7 @@
 .load-div i{
 	color: #808080;
 }
+
+.select2-container{
+	width:100% !important;
+}

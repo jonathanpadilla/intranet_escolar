@@ -1,5 +1,53 @@
 {% extends "ColegioBundle:Default:body.html.twig" %}
 
 {% block container %}
-	asdsdf
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget-wrap">
+                <div class="widget-container margin-top-0">
+                    <div class="widget-content">
+
+
+
+						<h1>subir imagen</h1>
+						<input type="file" id="foto" name="nombre_foto">
+						<p>Texto siguiente</p>
+						<div class="subir_imagen_contenido">
+							<button type="button" id="imagen">Seleccionar Imagen</button>
+							<button type="button" id="crear">Crear</button>
+						</div>
+						<div class="nueva_vista" style="width:500px;height:500px"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
+
+{% block javascripts -%}
+	{{ parent() }}
+	{% javascripts
+        '@BaseBundle/Resources/public/js/jquery.subir-imagen.js'
+        output='js/compiled/main.js' %}
+
+        <script src="{{ absolute_url(asset_url) }}"></script>
+
+    {% endjavascripts %}
+	<script>
+	$(function(){
+
+		$("#crear").on('click', function(){
+
+			$("#foto").subirImagen({
+				// classVista: 'nueva_vista',
+			});
+
+			// console.log($("#foto").val());
+		});
+
+		// $("#foto").subirImagen();
+
+	});
+	</script>
+{%- endblock %}
