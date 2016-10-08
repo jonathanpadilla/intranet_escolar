@@ -5,7 +5,7 @@ namespace BaseBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PerPersona
+ * PerPersona Entity
  *
  * @ORM\Table(name="per_persona")
  * @ORM\Entity

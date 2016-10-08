@@ -133,3 +133,24 @@ function Rut(input)
 
 	return false;
 }
+
+function rutExistente(rut)
+{
+	var nrut = rut || false;
+
+	var ajax = {
+		url: Routing.generate('base_ajax_buscar_rut'),
+		data: {'rut':rut},
+		dataType: 'json',
+		method: 'post',
+		cache: false
+	};
+
+	$.ajax(ajax).
+		success(function(result)
+			{
+				console.log(result);
+			});
+
+	return false;
+}

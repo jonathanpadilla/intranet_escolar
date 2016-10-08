@@ -4,6 +4,9 @@ $(function(){
 	$(".select-search").select2();
 
 	$('.clone-widget').cloneya();
+
+	$('.clone-link').cloneya();
+
 })
 
 $.datepicker.regional['es'] = {

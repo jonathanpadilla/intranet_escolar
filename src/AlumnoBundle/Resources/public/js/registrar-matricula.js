@@ -7,28 +7,19 @@ $(function(){
 	fecha(".txt_fecha");
 
 	txt_rut.focusout(function() {
-		if(Rut(txt_rut))
+		if(rutExistente(txt_rut.val()))
 		{
-			var rut = txt_rut.val();
-
-			// rut = rut.replace(new RegExp('.', 'g'), '');
-			// rut = rut.replace(new RegExp('-', 'g'), '');
-			// rut = rut.replace(new RegExp(' ', 'g'), '');
-			// console.log(rut.length);
-
-			// for(i = rut.length; i != 0)
-			// {
-
-			// }
-		}
+			console.log('el rut existe');
+		}else{
+            console.log('el rut no existe');
+        }
 	});
-
 	
 	/***************************************/
     /* Form validation */
     /***************************************/
 
-    jQuery.validator.addMethod("rut", function(value, element){
+    jQuery.validator.addMethod("valido", function(value, element){
 	    return Rut(txt_rut);
 	}, "Rut inválido");
 
@@ -50,7 +41,7 @@ $(function(){
         rules: {
             txt_rut: {
                 required: true,
-                rut: true
+                valido: true
             },
             // txt_numero_matricula: {
             //     required: true

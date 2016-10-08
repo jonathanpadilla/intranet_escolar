@@ -1,3 +1,18 @@
+## VIEWS ##
 base_homepage:
     path:     /
     defaults: { _controller: BaseBundle:Default:index }
+
+## AJAX ##
+
+base_ajax_buscar_rut:
+    path:     /buscar-rut/
+    defaults: { _controller: BaseBundle:FnRut:buscarRut }
+    options:
+        expose: true
+
+## FUNCIONES ##
+
+base_fnsesion_salir:
+    path:     /salir/
+    defaults: { _controller: BaseBundle:FnSesion:salir }
