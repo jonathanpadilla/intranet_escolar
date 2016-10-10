@@ -5,7 +5,7 @@ namespace BaseBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PerPersona Entity
+ * PerPersona
  *
  * @ORM\Table(name="per_persona")
  * @ORM\Entity
@@ -57,13 +57,6 @@ class PerPersona
     private $perDni;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="per_foto", type="string", length=100, nullable=true)
-     */
-    private $perFoto;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="per_fecha_nacimiento", type="date", nullable=true)
@@ -76,13 +69,6 @@ class PerPersona
      * @ORM\Column(name="per_sexo", type="string", length=1, nullable=true)
      */
     private $perSexo;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="per_estado_civil", type="integer", nullable=true)
-     */
-    private $perEstadoCivil;
 
     /**
      * @var \DateTime
@@ -226,29 +212,6 @@ class PerPersona
     }
 
     /**
-     * Set perFoto
-     *
-     * @param string $perFoto
-     * @return PerPersona
-     */
-    public function setPerFoto($perFoto)
-    {
-        $this->perFoto = $perFoto;
-
-        return $this;
-    }
-
-    /**
-     * Get perFoto
-     *
-     * @return string 
-     */
-    public function getPerFoto()
-    {
-        return $this->perFoto;
-    }
-
-    /**
      * Set perFechaNacimiento
      *
      * @param \DateTime $perFechaNacimiento
@@ -292,29 +255,6 @@ class PerPersona
     public function getPerSexo()
     {
         return $this->perSexo;
-    }
-
-    /**
-     * Set perEstadoCivil
-     *
-     * @param integer $perEstadoCivil
-     * @return PerPersona
-     */
-    public function setPerEstadoCivil($perEstadoCivil)
-    {
-        $this->perEstadoCivil = $perEstadoCivil;
-
-        return $this;
-    }
-
-    /**
-     * Get perEstadoCivil
-     *
-     * @return integer 
-     */
-    public function getPerEstadoCivil()
-    {
-        return $this->perEstadoCivil;
     }
 
     /**

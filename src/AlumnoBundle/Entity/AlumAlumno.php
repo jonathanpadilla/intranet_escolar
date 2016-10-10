@@ -22,6 +22,20 @@ class AlumAlumno
     private $aluIdPk;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="alu_matricula", type="integer", nullable=true)
+     */
+    private $aluMatricula;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alu_foto", type="string", length=50, nullable=true)
+     */
+    private $aluFoto;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="alu_clave", type="string", length=150, nullable=true)
@@ -69,6 +83,52 @@ class AlumAlumno
     public function getAluIdPk()
     {
         return $this->aluIdPk;
+    }
+
+    /**
+     * Set aluMatricula
+     *
+     * @param integer $aluMatricula
+     * @return AlumAlumno
+     */
+    public function setAluMatricula($aluMatricula)
+    {
+        $this->aluMatricula = $aluMatricula;
+
+        return $this;
+    }
+
+    /**
+     * Get aluMatricula
+     *
+     * @return integer 
+     */
+    public function getAluMatricula()
+    {
+        return $this->aluMatricula;
+    }
+
+    /**
+     * Set aluFoto
+     *
+     * @param string $aluFoto
+     * @return AlumAlumno
+     */
+    public function setAluFoto($aluFoto)
+    {
+        $this->aluFoto = $aluFoto;
+
+        return $this;
+    }
+
+    /**
+     * Get aluFoto
+     *
+     * @return string 
+     */
+    public function getAluFoto()
+    {
+        return $this->aluFoto;
     }
 
     /**

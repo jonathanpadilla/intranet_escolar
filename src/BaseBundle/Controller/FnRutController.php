@@ -4,7 +4,6 @@ namespace BaseBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use BaseBundle\Models\Persona;
 
 class FnRutController extends Controller
 {
@@ -13,11 +12,18 @@ class FnRutController extends Controller
     	if($request->getMethod() == 'POST')
     	{
     		// variables
-    		$return = false;
+    		$return = ['result' => false];
+    		$em 	= $this->getDoctrine()->getManager('global_persona');
     		$rut 	= $request->get('rut');
 
-    		$persona = new Persona();
-    		$return = $persona->getPersonaByRut($rut, false);
+    		if( $persona = $em->getRepository('BaseBundle:PerPersona')->findOneBy(['perDni' => $rut]) )
+    		{
+    			$return = [
+    				'result' 	=> true,
+    				'datos'		=> $persona
+    			];
+    		}
+
 
     		echo json_encode(['return' => $return]);
     		exit;
